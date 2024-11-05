@@ -9,6 +9,22 @@ services:
       - "80:80"
     depends_on:
       - db
+      - api
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile  # Asegúrate de tener un Dockerfile en la carpeta `api`
+    environment:
+      DHOST: db
+      DUSER: user
+      NAME: mydatabase
+      PASSWORD: password
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
 
   db:
     image: mysql:8.0
