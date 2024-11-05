@@ -1,0 +1,85 @@
+
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del contenedor principal */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+/* Caja del formulario */
+.login-box {
+  width: 300px;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover para resaltar la caja */
+.login-box:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #4a4a4a;
+}
+
+p {
+  margin-bottom: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Estilos de los campos de entrada */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+/* Efecto al enfocar el campo de entrada */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #6e8efb;
+}
+
+/* Estilo del botón */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #6e8efb;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Efecto hover del botón */
+button:hover {
+  background: #576ac9;
+}
