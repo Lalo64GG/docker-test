@@ -14,7 +14,7 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile  # Asegúrate de tener un Dockerfile en la carpeta `api`
+      dockerfile: DockerFile
     environment:
       DHOST: db
       DUSER: user
