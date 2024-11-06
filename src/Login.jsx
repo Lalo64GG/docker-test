@@ -1,13 +1,38 @@
 import React, { useState } from "react";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí va la lógica de inicio de sesión
-    console.log("Email:", email);
-    console.log("Password:", password);
+    try {
+      const response = await fetch("http://localhost:4000/", { // Cambia la URL según tu API
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      console.log("sad")
+
+      const data = await response.json();
+
+      console.log(data)
+
+      if (response.status === 204) {
+        setMessage("User not found");
+      } else if (response.ok) {
+        const data = await response.json();
+        setMessage(data.message);
+      } else {
+        setMessage("An error occurred");
+      }
+    } catch (error) {
+      setMessage("Server error");
+    }
   };
 
   return (
@@ -32,6 +57,7 @@ function Login() {
           />
           <button type="submit">Login</button>
         </form>
+        {message && <p>{message}</p>}
       </div>
     </div>
   );
