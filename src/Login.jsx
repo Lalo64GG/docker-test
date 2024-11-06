@@ -8,8 +8,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/", { // Cambia la URL según tu API
-        method: "POST",
+      const response = await fetch("http://44.223.158.78:4000/", { 
         headers: {
           "Content-Type": "application/json",
         },
