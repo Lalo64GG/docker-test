@@ -3,8 +3,8 @@ import mysql from 'mysql2/promise';
 
 dotenv.config();
 const config = {
-    host: process.env.HOST,
-    user: process.env.USER,
+    host: process.env.DHOST,
+    user: process.env.DUSER,
     database: 'mydatabase',
     password: process.env.PASSWORD,
 };
