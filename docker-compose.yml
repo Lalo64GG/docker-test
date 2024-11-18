@@ -4,7 +4,7 @@ services:
   react-app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: DockerFile
     ports:
       - "3000:80" # Exponiendo el servicio Vite en un puerto diferente
     depends_on:
