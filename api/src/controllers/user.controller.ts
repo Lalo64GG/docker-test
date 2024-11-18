@@ -14,7 +14,7 @@ export const Login = async (req: Request, res: Response): Promise<void> => {
       res.status(204).json({
         message: "User not found",
       });
-      return; // Finaliza la función sin devolver Response explícitamente
+      
     }
 
     res.status(200).json({
